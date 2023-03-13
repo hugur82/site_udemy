@@ -14,8 +14,7 @@ window.onload = function()
 
     init();
     
-    function init()
-    {
+    function init(){
         var canvas = document.createElement('canvas');
         canvas.style.margin = "50px auto";
         canvas.style.display = "block";
@@ -31,8 +30,7 @@ window.onload = function()
         refreshCanvas();
     }
     
-    function refreshCanvas()
-    {
+    function refreshCanvas(){
         snakee.advance();
         if (snakee.checkCollision())
         {
@@ -59,8 +57,7 @@ window.onload = function()
         }
     }
 
-    function gameOver()
-    {
+    function gameOver(){
         ctx.save();
         ctx.strokeStyle = 'black';
         ctx.fillStyle = 'black';
@@ -69,23 +66,19 @@ window.onload = function()
         ctx.textBaseline = 'middle';
         const text = 'Game Over \n appuyer sur espace pour recommance';
         ctx.fillText(text, canvasWidth / 2  , canvasHeight /2);
-        
         ctx.restore();
     }
     
-    function restart()
-    {
+    function restart(){
         snakee = new Snake([[6,4],[5,4],[4,4],[3,4],[2,4]], "right");
         applee = new Apple([10,10]);
         score = 0;
         delay = 680;
         clearTimeout(timeout);
         refreshCanvas();
-
     }
 
-    function speed()
-    {
+    function speed(){
         if (score < 5)
             delay -=30;
         else if (score < 15)
@@ -94,11 +87,9 @@ window.onload = function()
                     delay -=12;
                 else
                     delay -= 8;
-                
     }
 
-    function drawScore()
-    {
+    function drawScore(){
         ctx.save();
         ctx.fillStyle = 'red';
         ctx.font = '12px Verdana';
@@ -107,20 +98,17 @@ window.onload = function()
         ctx.restore();
     }
 
-    function drawBlock(ctx, position)
-    {
+    function drawBlock(ctx, position){
         var x = position[0] * blockSize;
         var y = position[1] * blockSize;
         ctx.fillRect(x,y,blockSize,blockSize);
     }
 
-    function Snake(body, direction)
-    {
+    function Snake(body, direction){
         this.body = body;
         this.direction = direction;
         this.ateApple = false;
-        this.draw = function()
-        {
+        this.draw = function(){
             ctx.save();
             ctx.fillStyle = "rgb(8, 91, 13)";
             for(var i = 0; i < this.body.length; i++)
@@ -129,7 +117,6 @@ window.onload = function()
             }
             ctx.restore();     
         };
-
         this.advance = function(){
             var nextPosition = this.body[0].slice();
             switch (this.direction)
@@ -149,9 +136,8 @@ window.onload = function()
                     this.body.pop();
                 else
                     this.ateApple = false;
-            };
-        this.setDirection = function (newDirection)
-        {
+        };
+        this.setDirection = function (newDirection){
             var allowDirections;
             switch(this.direction)
             {                
@@ -168,8 +154,7 @@ window.onload = function()
                 this.direction = newDirection;
             }
         };
-        this.checkCollision = function()
-        {
+        this.checkCollision = function(){
             var wallCollision = false;
             var snakeCollision = false;
             var head = this.body[0];
@@ -198,22 +183,18 @@ window.onload = function()
             return wallCollision || snakeCollision;
         };
         
-        this.isEatingApple = function (appleToEat)
-        {
+        this.isEatingApple = function (appleToEat){
             var head = this.body[0];
             if (head[0] === appleToEat.position[0] && head[1] === appleToEat.position[1])
                 return true;
             else
                 return false;
-
         }
     }
 
-    function Apple(position)
-    {
+    function Apple(position){
         this.position = position;
-        this.draw = function ()
-        {
+        this.draw = function (){
             ctx.save();
             ctx.fillStyle = "#33cc33";
             ctx.beginPath();
@@ -224,16 +205,13 @@ window.onload = function()
             ctx.fill();
             ctx.restore();
         };
-        this.setNewPosition = function()
-        {
+        this.setNewPosition = function(){
             var newX = Math.round(Math.random() * (widthInBlocks - 1));
             var newY = Math.round(Math.random() * (heightInBlocks - 1));
             this.position = [newX, newY];
         };
-        this.isOnSnake = function(snakeToCheck)
-        {
+        this.isOnSnake = function(snakeToCheck){
             var isOnSnake = false;
-
             for (var i = 0; i < snakeToCheck.body.length;i++)
             {
                 if (snakeToCheck.body[i][0] === this.position[0] && snakeToCheck.body[i][1] === this.position[1])
@@ -243,8 +221,7 @@ window.onload = function()
         }
     }
 
-    document.onkeydown = function handleKeyDown(e)
-    {
+    document.onkeydown = function handleKeyDown(e){
         var key = e.keyCode;
         var newDirection;
         switch (key)
