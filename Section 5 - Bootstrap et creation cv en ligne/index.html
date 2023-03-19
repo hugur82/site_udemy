@@ -16,6 +16,26 @@
     <title>CV Hakan UGUR</title>
 </head>
 <body>
+    <nav id="myNavbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#about">Moi</a>
+              <a class="nav-link" href="#skills">Compétences</a>
+              <a class="nav-link" href="#experience">Expérience</a>
+              <a class="nav-link" href="#education">Education</a>
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+              <a class="nav-link" href="#recommendations">Recommendations</a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div data-bs-spy="scroll" data-bs-target="#myNavbar" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
     <section id="about" class="container-fluid">
         <div class="col-8 col-lg-4 profile-picture">
             <img src="./images/me.jpg" class="rounded-circle" alt="" srcset="">
@@ -203,5 +223,49 @@
             </div>
         </div>
     </section>
+
+    <section id="recommendations">
+        <div class="container">
+            <div class="divider"></div>
+            <div class="heading">
+                <h2>Recommandations</h2>
+            </div>
+            <div id="myCarousel" class="carousel carousel-dark slide text-center">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h3>"a nice guy"</h3>
+                        <h4>Larry Page, google Co-Fouder</h4>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>"hakan is a nice guy"</h3>
+                        <h4>snoop dog</h4>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>"hakan is a bad guy and a nice guy"</h3>
+                        <h4>Roy betty</h4>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <a href="#about"><span class="bi-chevron-up"></span></a>
+        <h5>What about React ??</h5>
+    </footer>
+    
 </body>
 </html>

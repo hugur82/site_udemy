@@ -38,6 +38,34 @@ section .heading h2{
 ul{
     list-style: none;
 }
+
+/*-----------------       NAVBAR          -----------------*/
+
+.navbar {
+    background-color: #d82c2e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+
+.navbar-nav{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav-link{
+    color:white !important;
+    margin: 0 6px;
+}
+.nav-link.active,
+.nav-link:hover{
+    color:#d82c2e !important;
+    background-color: white;
+    margin: 0 6px;
+}
+
+
 /*-----------------       ABOUT          -----------------*/
 
 #about {
@@ -241,7 +269,7 @@ ul{
 }
 
 #portfolio .col-md-4{
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #portfolio img{
@@ -254,4 +282,38 @@ ul{
 #portfolio img:hover {
     filter: none;
     -webkit-filter: none;
+}
+/*-----------------       RECOMANDATIONS         -----------------*/
+
+#recommendations .heading h2{
+    color: #d82c2e;
+}
+
+#myCarousel .carousel-item {
+    padding: 30px 30px 90px;
+}
+#myCarousel .carousel-item h3{
+    color:#d82c2e;
+    font-style: italic;
+}
+
+/*-----------------       FOOTER         -----------------*/
+
+footer {
+    background-color: #333;
+    padding: 20px 0 40px;
+}
+
+footer span{
+    color:#d82c2e;
+    font-size: 25px;
+    line-height: 35px;
+}
+footer span:hover{
+    font-size: 28px;
+}
+
+footer h5{
+    color:white;
+    font-weight: normal;
 }
